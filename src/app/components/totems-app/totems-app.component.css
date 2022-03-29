@@ -1,0 +1,30 @@
+.cabecalho{
+    font-size: small;
+    white-space: nowrap;
+    text-align: center; 
+    border-collapse: separate;
+    background-color: #831D1C;
+    color: #FFF;
+}
+.body{
+    font-size: small;
+    white-space: nowrap;
+    text-align: center;
+}
+.text-center{
+    color: #831D1C;
+    margin-top: 40px;
+}
+.header{
+    background-color: #831D1C;
+    color: #FFF;
+}
+.table-striped tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+.table-striped tbody tr:nth-child(odd) {
+    background-color: #b35857;
+}
+.identificadorh{
+    text-transform: uppercase;
+}

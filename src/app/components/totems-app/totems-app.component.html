@@ -1,0 +1,54 @@
+<h1 class="text-center">Lista de Totems</h1>
+<br>
+<br>
+<table class="table table-striped">
+
+    <thead class="cabecalho">
+        <tr>
+            <th class="identificadorh">Número do Ativo</th>
+            <th>Id</th>
+            <th>Unidade</th>
+            <th>Hostname</th>
+            <th>Tipo</th>
+            <th>Serial</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Espaço em Disco</th>
+            <th>Processador</th>
+            <th>Memória</th>
+            <th>Número de Série</th>
+            <th>Sistema Operacional</th>
+            <th>Versão do Sistema</th>
+            <th>Arquitetura</th>
+            <th>Versão do Totem</th>
+            <th>Estado do Ativo</th>
+            <th>Observações</th>
+            <th>Data de Adição</th>
+        </tr>
+    </thead>
+
+    <tbody class="body">
+        <tr *ngFor="let totem of totems">
+            <td class="identificadorb">{{totem.numeroDoAtivo}}</td>
+            <td>{{totem.id}}</td>
+            <td>{{totem.unidade}}</td>
+            <td>{{totem.hostname}}</td>
+            <td>{{totem.tipo}}</td>
+            <td>{{totem.serial}}</td>
+            <td>{{totem.fabricante}}</td>
+            <td>{{totem.modelo}}</td>
+            <td>{{totem.espacoEmDisco}}</td>
+            <td>{{totem.processador}}</td>
+            <td>{{totem.memoria}}</td>
+            <td>{{totem.numeroDeSerie}}</td>
+            <td>{{totem.sistemaOperacional}}</td>
+            <td>{{totem.versaoSistema}}</td>
+            <td>{{totem.arquiterura}}</td>
+            <td>{{totem.versaoDoTotem}}</td>
+            <td>{{totem.estadoDoAtivo}}</td>
+            <td>{{totem.observacao}}</td>
+            <td>{{totem.dataDeAdicao}}</td>
+        </tr>
+    </tbody>
+
+</table>
