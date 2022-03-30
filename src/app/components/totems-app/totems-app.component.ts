@@ -10,14 +10,18 @@ import { TotemService } from './totems-app.component.services';
 export class TotemsAppComponent implements OnInit {
 
   totemService: TotemService;
-  name: string = "teste";
   totems: Array<any> = new Array();
+  filter?: any;
 
   constructor(totemService: TotemService) {
     this.totemService = totemService;
   }
 
   ngOnInit(): void {
+    this.listar();
+  }
+
+  listar(): void {
     this.totemService.getTotems().subscribe(data => this.totems = data);
   }
 

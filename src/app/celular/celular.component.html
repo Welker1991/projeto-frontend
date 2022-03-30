@@ -1,0 +1,49 @@
+<h1 class="text-center">Lista de Celulares</h1>
+<br>
+<br>
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+</nav>
+
+<table class="table table-striped">
+
+    <thead class="cabecalho">
+        <tr>
+            <th class="identificadorh">Número do Ativo</th>
+            <th>Id</th>
+            <th>Unidade</th>
+            <th>Usuario</th>
+            <th>Serial</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>IMEI 1</th>
+            <th>IMEI 2</th>
+            <th>Sistema Operacional</th>
+            <th>Versão do Sistema</th>
+            <th>Estado do Ativo</th>
+            <th>Observações</th>
+            <th>Data de Adição</th>
+        </tr>
+    </thead>
+
+    <tbody class="body">
+        <tr *ngFor="let celular of celulares | filter: filter">
+            <td class="identificadorb">{{celular.numeroDoAtivo}}</td>
+            <td>{{celular.id}}</td>
+            <td>{{celular.unidade}}</td>
+            <td>{{celular.usuario}}</td>
+            <td>{{celular.serial}}</td>
+            <td>{{celular.fabricante}}</td>
+            <td>{{celular.modelo}}</td>
+            <td>{{celular.imei1}}</td>
+            <td>{{celular.imei2}}</td>
+            <td>{{celular.sistemaOperacional}}</td>
+            <td>{{celular.versaoSistema}}</td>
+            <td>{{celular.estadoDoAtivo}}</td>
+            <td>{{celular.observacao}}</td>
+            <td>{{celular.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+        </tr>
+    </tbody>
+
+</table>

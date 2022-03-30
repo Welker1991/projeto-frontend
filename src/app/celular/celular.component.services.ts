@@ -5,9 +5,9 @@ import { Observable, tap } from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
-export class TotemService {
+export class CelularService {
 
-    private url = 'https://localhost:7204/totem';
+    private url = 'https://localhost:7204/celular';
 
     httpOptions = {
         Headers: new HttpHeaders({ 'content-type': 'application/json' })
@@ -15,13 +15,8 @@ export class TotemService {
 
     constructor(private http: HttpClient) { }
 
-    getTotems(): Observable<any> {
+    getCelulares(): Observable<any> {
         return this.http.get(this.url).pipe(tap(console.log))
     };
 
-    createTotem(totem: any): Observable<any> {
-        return this.http.post(this.url, totem).pipe(tap(console.log))
-    }
-
 }
-

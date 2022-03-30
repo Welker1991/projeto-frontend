@@ -1,6 +1,15 @@
 <h1 class="text-center">Lista de Totems</h1>
 <br>
 <br>
+
+<a routerLink="/cadastrar" class="btn btn-primary">
+    Cadastrar Totem
+</a>
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+</nav>
+
 <table class="table table-striped">
 
     <thead class="cabecalho">
@@ -28,7 +37,7 @@
     </thead>
 
     <tbody class="body">
-        <tr *ngFor="let totem of totems">
+        <tr *ngFor="let totem of totems | filter: filter">
             <td class="identificadorb">{{totem.numeroDoAtivo}}</td>
             <td>{{totem.id}}</td>
             <td>{{totem.unidade}}</td>
@@ -47,7 +56,7 @@
             <td>{{totem.versaoDoTotem}}</td>
             <td>{{totem.estadoDoAtivo}}</td>
             <td>{{totem.observacao}}</td>
-            <td>{{totem.dataDeAdicao}}</td>
+            <td>{{totem.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
         </tr>
     </tbody>
 

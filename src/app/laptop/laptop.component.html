@@ -1,0 +1,54 @@
+<h1 class="text-center">Lista de Laptops</h1>
+<br>
+<br>
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+    <!-- Input que deve ser adicionado -->
+</nav>
+
+<table class="table table-striped">
+
+    <thead class="cabecalho">
+        <tr>
+            <th class="identificadorh">Número do Ativo</th>
+            <th>Id</th>
+            <th>Unidade</th>
+            <th>Usuario</th>
+            <th>Serial</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Espaço em Disco</th>
+            <th>Processador</th>
+            <th>Memória</th>
+            <th>Sistema Operacional</th>
+            <th>Versão do Sistema</th>
+            <th>Arquitetura</th>
+            <th>Estado do Ativo</th>
+            <th>Observações</th>
+            <th>Data de Adição</th>
+        </tr>
+    </thead>
+
+    <tbody class="body">
+        <tr *ngFor="let laptop of laptops | filter: filter">
+            <td class="identificadorb">{{laptop.numeroDoAtivo}}</td>
+            <td>{{laptop.id}}</td>
+            <td>{{laptop.unidade}}</td>
+            <td>{{laptop.usuario}}</td>
+            <td>{{laptop.serial}}</td>
+            <td>{{laptop.fabricante}}</td>
+            <td>{{laptop.modelo}}</td>
+            <td>{{laptop.espacoEmDisco}}</td>
+            <td>{{laptop.processador}}</td>
+            <td>{{laptop.memoria}}</td>
+            <td>{{laptop.sistemaOperacional}}</td>
+            <td>{{laptop.versaoSistema}}</td>
+            <td>{{laptop.arquiterura}}</td>
+            <td>{{laptop.estadoDoAtivo}}</td>
+            <td>{{laptop.observacao}}</td>
+            <td>{{laptop.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+        </tr>
+    </tbody>
+
+</table>

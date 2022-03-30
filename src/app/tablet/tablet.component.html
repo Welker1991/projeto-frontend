@@ -1,0 +1,45 @@
+<h1 class="text-center">Lista de Tablets</h1>
+<br>
+<br>
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+</nav>
+
+<table class="table table-striped">
+
+    <thead class="cabecalho">
+        <tr>
+            <th class="identificadorh">Número do Ativo</th>
+            <th>Id</th>
+            <th>Unidade</th>
+            <th>Usuario</th>
+            <th>Serial</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Sistema Operacional</th>
+            <th>Versão do Sistema</th>
+            <th>Estado do Ativo</th>
+            <th>Observações</th>
+            <th>Data de Adição</th>
+        </tr>
+    </thead>
+
+    <tbody class="body">
+        <tr *ngFor="let tablet of tablets | filter: filter">
+            <td class="identificadorb">{{tablet.numeroDoAtivo}}</td>
+            <td>{{tablet.id}}</td>
+            <td>{{tablet.unidade}}</td>
+            <td>{{tablet.usuario}}</td>
+            <td>{{tablet.serial}}</td>
+            <td>{{tablet.fabricante}}</td>
+            <td>{{tablet.modelo}}</td>
+            <td>{{tablet.sistemaOperacional}}</td>
+            <td>{{tablet.versaoSistema}}</td>
+            <td>{{tablet.estadoDoAtivo}}</td>
+            <td>{{tablet.observacao}}</td>
+            <td>{{tablet.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+        </tr>
+    </tbody>
+
+</table>

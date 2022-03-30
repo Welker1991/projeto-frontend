@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TotemsCreateComponent } from './totems-create.component';
+import { CreateTotemComponent } from './create-totem.component';
 
-describe('TotemsCreateComponent', () => {
-  let component: TotemsCreateComponent;
-  let fixture: ComponentFixture<TotemsCreateComponent>;
+describe('CreateTotemComponent', () => {
+  let component: CreateTotemComponent;
+  let fixture: ComponentFixture<CreateTotemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TotemsCreateComponent ]
+      declarations: [ CreateTotemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TotemsCreateComponent);
+    fixture = TestBed.createComponent(CreateTotemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

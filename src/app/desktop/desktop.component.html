@@ -1,0 +1,53 @@
+<h1 class="text-center">Lista de Desktops</h1>
+<br>
+<br>
+
+<nav class="navbar">
+    <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
+</nav>
+
+<table class="table table-striped">
+
+    <thead class="cabecalho">
+        <tr>
+            <th class="identificadorh">Número do Ativo</th>
+            <th>Id</th>
+            <th>Unidade</th>
+            <th>Usuario</th>
+            <th>Serial</th>
+            <th>Fabricante</th>
+            <th>Modelo</th>
+            <th>Espaço em Disco</th>
+            <th>Processador</th>
+            <th>Memória</th>
+            <th>Sistema Operacional</th>
+            <th>Versão do Sistema</th>
+            <th>Arquitetura</th>
+            <th>Estado do Ativo</th>
+            <th>Observações</th>
+            <th>Data de Adição</th>
+        </tr>
+    </thead>
+
+    <tbody class="body">
+        <tr *ngFor="let desktop of desktops | filter: filter">
+            <td class="identificadorb">{{desktop.numeroDoAtivo}}</td>
+            <td>{{desktop.id}}</td>
+            <td>{{desktop.unidade}}</td>
+            <td>{{desktop.usuario}}</td>
+            <td>{{desktop.serial}}</td>
+            <td>{{desktop.fabricante}}</td>
+            <td>{{desktop.modelo}}</td>
+            <td>{{desktop.espacoEmDisco}}</td>
+            <td>{{desktop.processador}}</td>
+            <td>{{desktop.memoria}}</td>
+            <td>{{desktop.sistemaOperacional}}</td>
+            <td>{{desktop.versaoSistema}}</td>
+            <td>{{desktop.arquiterura}}</td>
+            <td>{{desktop.estadoDoAtivo}}</td>
+            <td>{{desktop.observacao}}</td>
+            <td>{{desktop.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+        </tr>
+    </tbody>
+
+</table>

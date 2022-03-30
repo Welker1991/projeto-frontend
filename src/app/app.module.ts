@@ -9,7 +9,20 @@ import { TotemsAppComponent } from './components/totems-app/totems-app.component
 import { FilterComponent } from './components/totems-app/filter/filter.component';
 import { TotemService } from './components/totems-app/totems-app.component.services';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TotemsCreateComponent } from './totems-create/totems-create.component';
+import { CelularComponent } from './celular/celular.component';
+import { TabletComponent } from './tablet/tablet.component';
+import { DesktopComponent } from './desktop/desktop.component';
+import { LaptopComponent } from './laptop/laptop.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule } from '@angular/forms';
+import { CreateTotemComponent } from './create-totem/create-totem.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  { path: 'cadastrar', component: CreateTotemComponent },
+  { path: 'listar', component: TotemsAppComponent }
+
+];
 
 @NgModule({
   declarations: [
@@ -19,11 +32,18 @@ import { TotemsCreateComponent } from './totems-create/totems-create.component';
     NavComponent,
     TotemsAppComponent,
     FilterComponent,
-    TotemsCreateComponent
+    CelularComponent,
+    TabletComponent,
+    DesktopComponent,
+    LaptopComponent,
+    CreateTotemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [HttpClientModule, TotemService],
   bootstrap: [AppComponent]
