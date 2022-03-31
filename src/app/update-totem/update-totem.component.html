@@ -1,6 +1,6 @@
 <router-outlet>
 
-    <h1>Cadastro de Totem</h1>
+    <h1>Atualizar de Totem</h1>
 
     <br>
 
@@ -10,7 +10,7 @@
 
     <div class="container">
 
-        <form method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
+        <form method="post" #frm="ngForm" (ngSubmit)="atualizar(totem.id, frm)">
 
             <div class="form-group">
                 <label for="unidade">Unidade</label>

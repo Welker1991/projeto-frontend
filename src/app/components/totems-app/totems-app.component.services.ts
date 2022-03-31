@@ -21,7 +21,17 @@ export class TotemService {
 
     createTotem(totem: any): Observable<any> {
         return this.http.post(this.url, totem).pipe(tap(console.log))
-    }
+    };
+
+    atualizarTotem(id: any, totem: any): Observable<any> {
+        console.log(id)
+        console.log(this.url + id)
+        return this.http.put(this.url + id, totem).pipe(tap(console.log))
+    };
+
+    deletarTotem(id: any): Observable<any> {
+        return this.http.delete(this.url.concat(id)).pipe(tap(console.log))
+    };
 
 }
 

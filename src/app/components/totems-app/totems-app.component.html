@@ -33,6 +33,7 @@
             <th>Estado do Ativo</th>
             <th>Observações</th>
             <th>Data de Adição</th>
+            <th>Ações</th>
         </tr>
     </thead>
 
@@ -57,6 +58,8 @@
             <td>{{totem.estadoDoAtivo}}</td>
             <td>{{totem.observacao}}</td>
             <td>{{totem.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td><button (click)="atualizar(totem.id)">Editar</button></td>
+            <td><button (click)="remover(totem.id)">Remover</button></td>
         </tr>
     </tbody>
 

@@ -17,10 +17,24 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FormsModule } from '@angular/forms';
 import { CreateTotemComponent } from './create-totem/create-totem.component';
 import { RouterModule, Routes } from '@angular/router';
+import { CreateDesktopComponent } from './create-desktop/create-desktop.component';
+import { CreateLaptopComponent } from './create-laptop/create-laptop.component';
+import { CreateCelularComponent } from './create-celular/create-celular.component';
+import { CreateTabletComponent } from './create-tablet/create-tablet.component';
+import { UpdateTotemComponent } from './update-totem/update-totem.component';
 
 const routes: Routes = [
-  { path: 'cadastrar', component: CreateTotemComponent },
-  { path: 'listar', component: TotemsAppComponent }
+  { path: 'cadastrar-totem', component: CreateTotemComponent },
+  { path: 'listar-totem', component: TotemsAppComponent },
+  { path: 'cadastrar-desktop', component: CreateDesktopComponent },
+  { path: 'listar-desktop', component: DesktopComponent },
+  { path: 'cadastrar-laptop', component: CreateLaptopComponent },
+  { path: 'listar-laptop', component: LaptopComponent },
+  { path: 'cadastrar-celular', component: CreateCelularComponent },
+  { path: 'listar-celular', component: CelularComponent },
+  { path: 'cadastrar-tablet', component: CreateTabletComponent },
+  { path: 'listar-tablet', component: TabletComponent },
+  { path: 'atualizar-totem', component: UpdateTotemComponent }
 
 ];
 
@@ -36,14 +50,19 @@ const routes: Routes = [
     TabletComponent,
     DesktopComponent,
     LaptopComponent,
-    CreateTotemComponent
+    CreateTotemComponent,
+    CreateDesktopComponent,
+    CreateLaptopComponent,
+    CreateCelularComponent,
+    CreateTabletComponent,
+    UpdateTotemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [HttpClientModule, TotemService],
   bootstrap: [AppComponent]

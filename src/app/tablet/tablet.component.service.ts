@@ -19,4 +19,8 @@ export class TabletService {
         return this.http.get(this.url).pipe(tap(console.log))
     };
 
+    createTablet(tablet: any): Observable<any> {
+        return this.http.post(this.url, tablet).pipe(tap(console.log))
+    }
+
 }

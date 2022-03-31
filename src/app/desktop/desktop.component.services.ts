@@ -19,5 +19,9 @@ export class DesktopService {
         return this.http.get(this.url).pipe(tap(console.log))
     };
 
+    createDesktop(desktop: any): Observable<any> {
+        return this.http.post(this.url, desktop).pipe(tap(console.log))
+    }
+
 }
 

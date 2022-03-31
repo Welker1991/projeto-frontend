@@ -19,4 +19,8 @@ export class CelularService {
         return this.http.get(this.url).pipe(tap(console.log))
     };
 
+    createCelular(celular: any): Observable<any> {
+        return this.http.post(this.url, celular).pipe(tap(console.log))
+    }
+
 }

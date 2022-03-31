@@ -19,5 +19,9 @@ export class LaptopService {
         return this.http.get(this.url).pipe(tap(console.log))
     };
 
+    createLaptop(laptop: any): Observable<any> {
+        return this.http.post(this.url, laptop).pipe(tap(console.log))
+    };
+
 }
 
