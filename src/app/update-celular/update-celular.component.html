@@ -1,5 +1,6 @@
 <router-outlet>
-    <h1>Cadastro de Celular</h1>
+
+    <h1>Atualizar de Celular</h1>
 
     <br>
 
@@ -9,7 +10,12 @@
 
     <div class="container">
 
-        <form method="post" #frm="ngForm" (ngSubmit)="criar(frm)">
+        <form method="post" #frm="ngForm" (ngSubmit)="atualizar(id, frm)">
+
+            <div class="form-group">
+                <label for="id">Informe o ID do Ativo</label>
+                <input type="number" id="id" name="id" class="form-control" placeholder="" [(ngModel)]="id" required />
+            </div>
 
             <div class="form-group">
                 <label for="unidade">Unidade</label>
@@ -18,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                <label for="usuario">Usuario</label>
+                <label for="Usuario">Usuario</label>
                 <input type="text" id="usuario" name="usuario" class="form-control" placeholder=""
                     [(ngModel)]="celular.usuario" required />
             </div>
@@ -50,7 +56,7 @@
             <div class="form-group">
                 <label for="imei2">IMEI 2</label>
                 <input type="text" id="imei2" name="imei2" class="form-control" placeholder=""
-                    [(ngModel)]="celular.imei2" />
+                    [(ngModel)]="celular.imei2" required />
             </div>
 
             <div class="form-group">
@@ -85,7 +91,6 @@
 
             <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">Salvar</button>
         </form>
-
 
     </div>
 </router-outlet>

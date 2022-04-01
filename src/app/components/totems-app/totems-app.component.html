@@ -2,8 +2,12 @@
 <br>
 <br>
 
-<a routerLink="/cadastrar" class="btn btn-primary">
+<a routerLink="/cadastrar-totem" class="btn btn-primary">
     Cadastrar Totem
+</a>
+
+<a routerLink="/atualizar-totem" class="btn btn-primary">
+    Atualizar Totem
 </a>
 
 <nav class="navbar">
@@ -58,7 +62,6 @@
             <td>{{totem.estadoDoAtivo}}</td>
             <td>{{totem.observacao}}</td>
             <td>{{totem.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
-            <td><button (click)="atualizar(totem.id)">Editar</button></td>
             <td><button (click)="remover(totem.id)">Remover</button></td>
         </tr>
     </tbody>

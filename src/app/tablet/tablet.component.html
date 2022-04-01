@@ -6,6 +6,10 @@
     Cadastrar Tablet
 </a>
 
+<a routerLink="/atualizar-tablet" class="btn btn-primary">
+    Atualizar Tablet
+</a>
+
 <nav class="navbar">
     <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
 </nav>
@@ -26,6 +30,7 @@
             <th>Estado do Ativo</th>
             <th>Observações</th>
             <th>Data de Adição</th>
+            <th>Ações</th>
         </tr>
     </thead>
 
@@ -43,6 +48,7 @@
             <td>{{tablet.estadoDoAtivo}}</td>
             <td>{{tablet.observacao}}</td>
             <td>{{tablet.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td><button (click)="remover(tablet.id)">Remover</button></td>
         </tr>
     </tbody>
 

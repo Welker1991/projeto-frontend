@@ -7,7 +7,7 @@ import { Observable, tap } from "rxjs";
 })
 export class TotemService {
 
-    private url = 'https://localhost:7204/totem';
+    private url = 'https://localhost:7204/totem/';
 
     httpOptions = {
         Headers: new HttpHeaders({ 'content-type': 'application/json' })
@@ -32,6 +32,7 @@ export class TotemService {
     deletarTotem(id: any): Observable<any> {
         return this.http.delete(this.url.concat(id)).pipe(tap(console.log))
     };
+
 
 }
 

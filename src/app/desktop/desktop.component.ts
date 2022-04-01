@@ -24,4 +24,9 @@ export class DesktopComponent implements OnInit {
     this.desktopService.getDesktops().subscribe(data => this.desktops = data);
   }
 
+  remover(id: any) {
+    this.desktopService.deletarDesktop(id).subscribe();
+    this.listar();
+  }
+
 }

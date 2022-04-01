@@ -24,4 +24,9 @@ export class LaptopComponent implements OnInit {
     this.laptopService.getLaptops().subscribe(data => this.laptops = data);
   }
 
+  remover(id: any) {
+    this.laptopService.deletarLaptop(id).subscribe();
+    this.listar();
+  }
+
 }

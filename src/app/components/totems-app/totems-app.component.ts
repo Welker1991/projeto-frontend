@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { CreateTotemComponent } from 'src/app/create-totem/create-totem.component';
 import { UpdateTotemComponent } from 'src/app/update-totem/update-totem.component';
@@ -10,11 +11,17 @@ import { TotemService } from './totems-app.component.services';
   templateUrl: './totems-app.component.html',
   styleUrls: ['./totems-app.component.css']
 })
+
+@Injectable({
+  providedIn: 'root'
+})
 export class TotemsAppComponent implements OnInit {
 
   totemService: TotemService;
   totems: Array<any> = new Array();
   filter?: any;
+  totem: any;
+  id: any;
   update?: UpdateTotemComponent;
 
   constructor(totemService: TotemService) {
@@ -29,12 +36,10 @@ export class TotemsAppComponent implements OnInit {
     this.totemService.getTotems().subscribe(data => this.totems = data);
   }
 
-  atualizar(id: any): void {
-    this.update?.receberId(id)
-    console.log(id)
+  remover(id: any) {
+    this.totemService.deletarTotem(id).subscribe();
+    this.listar();
   }
-
-  remover(id: any) { }
 
 }
 

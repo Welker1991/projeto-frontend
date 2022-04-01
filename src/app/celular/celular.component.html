@@ -6,6 +6,10 @@
     Cadastrar Celular
 </a>
 
+<a routerLink="/atualizar-celular" class="btn btn-primary">
+    Atualizar Celular
+</a>
+
 <nav class="navbar">
     <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
 </nav>
@@ -28,6 +32,7 @@
             <th>Estado do Ativo</th>
             <th>Observações</th>
             <th>Data de Adição</th>
+            <th>Ações</th>
         </tr>
     </thead>
 
@@ -47,6 +52,7 @@
             <td>{{celular.estadoDoAtivo}}</td>
             <td>{{celular.observacao}}</td>
             <td>{{celular.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td><button (click)="remover(celular.id)">Remover</button></td>
         </tr>
     </tbody>
 

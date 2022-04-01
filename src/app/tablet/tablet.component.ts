@@ -25,4 +25,9 @@ export class TabletComponent implements OnInit {
     this.tabletService.getTablets().subscribe(data => this.tablets = data);
   }
 
+  remover(id: any) {
+    this.tabletService.deletarTablet(id).subscribe();
+    this.listar();
+  }
+
 }

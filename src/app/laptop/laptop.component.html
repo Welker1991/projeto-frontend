@@ -6,6 +6,10 @@
     Cadastrar Laptop
 </a>
 
+<a routerLink="/atualizar-laptop" class="btn btn-primary">
+    Atualizar Laptop
+</a>
+
 <nav class="navbar">
     <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
     <!-- Input que deve ser adicionado -->
@@ -31,6 +35,7 @@
             <th>Estado do Ativo</th>
             <th>Observações</th>
             <th>Data de Adição</th>
+            <th>Ações</th>
         </tr>
     </thead>
 
@@ -52,6 +57,7 @@
             <td>{{laptop.estadoDoAtivo}}</td>
             <td>{{laptop.observacao}}</td>
             <td>{{laptop.dataDeAdicao | date: 'dd/MM/yyyy HH:mm'}}</td>
+            <td><button (click)="remover(laptop.id)">Remover</button></td>
         </tr>
     </tbody>
 

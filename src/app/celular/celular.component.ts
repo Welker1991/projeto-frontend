@@ -24,4 +24,9 @@ export class CelularComponent implements OnInit {
     this.celularService.getCelulares().subscribe(data => this.celulares = data);
   }
 
+  remover(id: any) {
+    this.celularService.deletarCelular(id).subscribe();
+    this.listar();
+  }
+
 }

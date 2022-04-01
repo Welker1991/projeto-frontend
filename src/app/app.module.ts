@@ -22,6 +22,10 @@ import { CreateLaptopComponent } from './create-laptop/create-laptop.component';
 import { CreateCelularComponent } from './create-celular/create-celular.component';
 import { CreateTabletComponent } from './create-tablet/create-tablet.component';
 import { UpdateTotemComponent } from './update-totem/update-totem.component';
+import { UpdateDesktopComponent } from './update-desktop/update-desktop.component';
+import { UpdateLaptopComponent } from './update-laptop/update-laptop.component';
+import { UpdateCelularComponent } from './update-celular/update-celular.component';
+import { UpdateTabletComponent } from './update-tablet/update-tablet.component';
 
 const routes: Routes = [
   { path: 'cadastrar-totem', component: CreateTotemComponent },
@@ -34,7 +38,11 @@ const routes: Routes = [
   { path: 'listar-celular', component: CelularComponent },
   { path: 'cadastrar-tablet', component: CreateTabletComponent },
   { path: 'listar-tablet', component: TabletComponent },
-  { path: 'atualizar-totem', component: UpdateTotemComponent }
+  { path: 'atualizar-totem', component: UpdateTotemComponent },
+  { path: 'atualizar-desktop', component: UpdateDesktopComponent },
+  { path: 'atualizar-laptop', component: UpdateLaptopComponent },
+  { path: 'atualizar-celular', component: UpdateCelularComponent },
+  { path: 'atualizar-tablet', component: UpdateTabletComponent }
 
 ];
 
@@ -55,7 +63,11 @@ const routes: Routes = [
     CreateLaptopComponent,
     CreateCelularComponent,
     CreateTabletComponent,
-    UpdateTotemComponent
+    UpdateTotemComponent,
+    UpdateDesktopComponent,
+    UpdateLaptopComponent,
+    UpdateCelularComponent,
+    UpdateTabletComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +76,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [HttpClientModule, TotemService],
+  providers: [HttpClientModule, TotemService, UpdateTotemComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

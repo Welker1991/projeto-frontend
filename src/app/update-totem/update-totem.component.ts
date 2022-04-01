@@ -24,16 +24,8 @@ export class UpdateTotemComponent implements OnInit {
     this.totem = {};
   }
 
-  receberId(id: any): void {
-    console.log(id);
-    console.log("no metodo")
-    this.id = id;
-    console.log(this.id)
-  }
-
   atualizar(id: any, frm: NgForm): void {
-    console.log(id);
-    this.totemService?.atualizarTotem(this.id, this.totem).subscribe(data => {
+    this.totemService?.atualizarTotem(id, this.totem).subscribe(data => {
       this.totem = data;
       frm.reset();
     })
