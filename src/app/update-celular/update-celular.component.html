@@ -1,95 +1,139 @@
 <router-outlet>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Selfit Academias</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-    <h1>Atualizar de Celular</h1>
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-totem">Totem</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-desktop">Desktop</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-laptop">Laptop</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-tablet">Tablet/Ipad</a>
+            </li>
+           
+            <li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listar-celular">Listar Celular</a>
+            </li>
+
+            </ul>
+
+            <form class="d-flex">
+            <input class="form-control me-2" type="buscar" placeholder="Buscar" aria-label="buscar">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+        </div>
+    </nav>
 
     <br>
-
-    <a routerLink="/listar-celular" class="btn btn-primary">
-        Listar Celular
-    </a>
+    <br>
+    <br>
+        
+    <div class="py-5 text-center">
+        <h2>Atualizar Celular</h2>
+    </div>
 
     <div class="container">
 
-        <form method="post" #frm="ngForm" (ngSubmit)="atualizar(id, frm)">
+        <form method="post" #frm="ngForm" (ngSubmit)="atualizar(id, frm)" class="row g-3">
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="id">Informe o ID do Ativo</label>
                 <input type="number" id="id" name="id" class="form-control" placeholder="" [(ngModel)]="id" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="unidade">Unidade</label>
                 <input type="number" id="unidade" name="unidade" class="form-control" placeholder=""
                     [(ngModel)]="celular.unidade" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="Usuario">Usuario</label>
                 <input type="text" id="usuario" name="usuario" class="form-control" placeholder=""
                     [(ngModel)]="celular.usuario" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="serial">Serial</label>
                 <input type="text" id="serial" name="serial" class="form-control" placeholder=""
                     [(ngModel)]="celular.serial" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="fabricante">Fabricante</label>
                 <input type="text" id="fabricante" name="fabricante" class="form-control" placeholder=""
                     [(ngModel)]="celular.fabricante" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="modelo">Modelo</label>
                 <input type="text" id="modelo" name="modelo" class="form-control" placeholder=""
                     [(ngModel)]="celular.modelo" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="imei1">IMEI 1</label>
                 <input type="text" id="imei1" name="imei1" class="form-control" placeholder=""
                     [(ngModel)]="celular.imei1" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="imei2">IMEI 2</label>
                 <input type="text" id="imei2" name="imei2" class="form-control" placeholder=""
                     [(ngModel)]="celular.imei2" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="sistema-operacional">Sistema Operacional</label>
                 <input type="text" id="sistema-operacional" name="sistema-operacional" class="form-control"
                     placeholder="" [(ngModel)]="celular.sistemaOperacional" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4"> 
                 <label for="versao-sistema">Versao do Sistema</label>
                 <input type="text" id="versao-sistema" name="versao-sistema" class="form-control" placeholder=""
                     [(ngModel)]="celular.versaoSistema" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="numero-ativo">Numero do Ativo</label>
                 <input type="text" id="numero-ativo" name="numero-ativo" class="form-control" placeholder=""
                     [(ngModel)]="celular.numeroDoAtivo" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="estado-do-ativo">Estado do Ativo</label>
                 <input type="text" id="estado-do-ativo" name="estado-do-ativo" class="form-control" placeholder=""
                     [(ngModel)]="celular.estadoDoAtivo" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="mb-1">
                 <label for="observacao">Observacao</label>
                 <input type="text" id="observacao" name="observacao" class="form-control" placeholder=""
                     [(ngModel)]="celular.observacao" />
             </div>
 
-            <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">Salvar</button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="submit" class="btn btn-primary" [disabled]="frm.invalid">Salvar</button>
+            </div>
+
+            
         </form>
 
     </div>

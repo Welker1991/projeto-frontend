@@ -1,125 +1,162 @@
 <router-outlet>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Selfit Academias</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-desktop">Desktop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-laptop">Laptop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-tablet">Tablet/Ipad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/cadastrar-celular">Celular</a>
+            </li>
+            <li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/listar-totem">Listar Totem</a>
+            </li>
 
-    <h1>Atualizar de Totem</h1>
+            </ul>
+
+            <form class="d-flex">
+            <input class="form-control me-2" type="buscar" placeholder="Buscar" aria-label="buscar">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+        </div>
+    </nav>
 
     <br>
-
-    <a routerLink="/listar-totem" class="btn btn-primary">
-        Listar Totem
-    </a>
+    <br>
+    <br>
+        
+    <div class="py-5 text-center">
+        <h2>Atualizar Totem</h2>
+    </div>
 
     <div class="container">
 
-        <form method="post" #frm="ngForm" (ngSubmit)="atualizar(id, frm)">
+        <form method="post" #frm="ngForm" (ngSubmit)="atualizar(id, frm)" class="row g-3">
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="id">Informe o ID do Ativo</label>
                 <input type="number" id="id" name="id" class="form-control" placeholder="" [(ngModel)]="id" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="unidade">Unidade</label>
                 <input type="number" id="unidade" name="unidade" class="form-control" placeholder=""
                     [(ngModel)]="totem.unidade" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="hostname">Hostname</label>
                 <input type="text" id="hostname" name="hostname" class="form-control" placeholder=""
                     [(ngModel)]="totem.hostname" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="tipo">Tipo</label>
                 <input type="text" id="tipo" name="tipo" class="form-control" placeholder="" [(ngModel)]="totem.tipo"
                     required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="serial">Serial</label>
                 <input type="text" id="serial" name="serial" class="form-control" placeholder=""
                     [(ngModel)]="totem.serial" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="fabricante">Fabricante</label>
                 <input type="text" id="fabricante" name="fabricante" class="form-control" placeholder=""
                     [(ngModel)]="totem.fabricante" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="modelo">Modelo</label>
                 <input type="text" id="modelo" name="modelo" class="form-control" placeholder=""
                     [(ngModel)]="totem.modelo" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="espaco-disco">Espaço em Disco</label>
                 <input type="text" id="espaco-disco" name="espaco-disco" class="form-control" placeholder=""
                     [(ngModel)]="totem.espacoEmDisco" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="processador">Processador</label>
                 <input type="text" id="processador" name="processador" class="form-control" placeholder=""
                     [(ngModel)]="totem.processador" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="memoria">Memoria</label>
                 <input type="text" id="memoria" name="memoria" class="form-control" placeholder=""
                     [(ngModel)]="totem.memoria" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="numero-de-serie">Numero de Série</label>
                 <input type="text" id="numero-de-serie" name="numero-de-serie" class="form-control" placeholder=""
                     [(ngModel)]="totem.numeroDeSerie" />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="sistema-operacional">Sistema Operacional</label>
                 <input type="text" id="sistema-operacional" name="sistema-operacional" class="form-control"
                     placeholder="" [(ngModel)]="totem.sistemaOperacional" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="versao-sistema">Versao do Sistema</label>
                 <input type="text" id="versao-sistema" name="versao-sistema" class="form-control" placeholder=""
                     [(ngModel)]="totem.versaoSistema" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="Arquitetura">Arquitetura</label>
                 <input type="text" id="arquiterura" name="arquiterura" class="form-control" placeholder=""
                     [(ngModel)]="totem.arquitetura" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="versao-totem">Versao do Totem</label>
                 <input type="text" id="versao-totem" name="versao-totem" class="form-control" placeholder=""
                     [(ngModel)]="totem.versaoDoTotem" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="numero-ativo">Numero do Ativo</label>
                 <input type="text" id="numero-ativo" name="numero-ativo" class="form-control" placeholder=""
                     [(ngModel)]="totem.numeroDoAtivo" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="col-md-4">
                 <label for="estado-do-ativo">Estado do Ativo</label>
                 <input type="text" id="estado-do-ativo" name="estado-do-ativo" class="form-control" placeholder=""
                     [(ngModel)]="totem.estadoDoAtivo" required />
             </div>
 
-            <div class="form-group">
+            <div class="form-group" class="mb-1">
                 <label for="observacao">Observacao</label>
                 <input type="text" id="observacao" name="observacao" class="form-control" placeholder=""
                     [(ngModel)]="totem.observacao" />
             </div>
 
-            <button type="submit" class="btn btn-primary" [disabled]="frm.invalid">Salvar</button>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-primary me-md-2" type="submit" class="btn btn-primary" [disabled]="frm.invalid">Salvar</button>
+            </div>
         </form>
 
     </div>

@@ -1,18 +1,58 @@
-<h1 class="text-center">Lista de Celulares</h1>
-<br>
-<br>
+<router-outlet>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Selfit Academias</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-totem">Totem</a>
+            </li>
 
-<a routerLink="/cadastrar-celular" class="btn btn-primary">
-    Cadastrar Celular
-</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-desktop">Desktop</a>
+            </li>
 
-<a routerLink="/atualizar-celular" class="btn btn-primary">
-    Atualizar Celular
-</a>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-laptop">Laptop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-tablet">Tablet/Ipad</a>
+            </li>
 
-<nav class="navbar">
+            <li class="nav-item">
+                <a class="nav-link" href="/atualizar-celular">Atualizar Celular</a>
+            </li>
+
+
+            
+            <li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastrar-celular">Cadastrar Celular</a>
+            </li>
+
+            </ul>
+
+            <form class="d-flex">
+            <input class="form-control me-2" type="text"  name="search" placeholder="Buscar" 
+            [(ngModel)]="filter" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+    <div class="py-5 text-center">
+        <h2>Lista de Celulares</h2>
+    </div>
+
+<!-- <nav class="navbar">
     <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
-</nav>
+</nav> -->
+
 
 <table class="table table-striped">
 

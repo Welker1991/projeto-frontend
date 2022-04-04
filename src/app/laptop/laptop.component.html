@@ -1,19 +1,51 @@
-<h1 class="text-center">Lista de Laptops</h1>
-<br>
-<br>
+<router-outlet>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Selfit Academias</a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-totem">Totem</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-desktop">Desktop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-tablet">Tablet/Ipad</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/listar-celular">Celular</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/atualizar-laptop">Atualizar Laptop</a>
+            </li>
+            <li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cadastrar-laptop">Cadastrar Laptop</a>
+            </li>
 
-<a routerLink="/cadastrar-laptop" class="btn btn-primary">
-    Cadastrar Laptop
-</a>
+            </ul>
 
-<a routerLink="/atualizar-laptop" class="btn btn-primary">
-    Atualizar Laptop
-</a>
+            <form class="d-flex">
+            <input class="form-control me-2" type="text"  name="search" placeholder="Buscar" 
+            [(ngModel)]="filter" />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+            </form>
+        </div>
+        </div>
+    </nav>
 
-<nav class="navbar">
+    <div class="py-5 text-center">
+        <h2>Lista de Laptops</h2>
+    </div>
+
+<!-- <nav class="navbar">
     <input class="form-control" type="text" name="search" [(ngModel)]="filter" />
-    <!-- Input que deve ser adicionado -->
-</nav>
+</nav> -->
 
 <table class="table table-striped">
 
